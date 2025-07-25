@@ -100,7 +100,7 @@ if (calcularInicioButton) {
 
     if (valorHGT < 70) {
       if (mensagemDiv) {
-        mensagemDiv.innerHTML = "<span style='color: red;'>**Atenção: HGT abaixo de 70 mg/dl. Pode ser  necessario adminstrar glicose ao paciente, avise o médico e ou enfermeiro.**</span>";
+        mensagemDiv.innerHTML = "<span style='color: red;'>Atenção: HGT abaixo de 70 mg/dl. Pode ser  necessario adminstrar glicose ao paciente, avise o médico e ou enfermeiro.</span>";
       }
       return;
     }
@@ -120,7 +120,7 @@ if (calcularInicioButton) {
     }
 
     if (mensagemDiv) {
-      mensagemDiv.innerHTML = `Iniciar protocolo com vazão de **${vazao} ml/hr**. ${bolus > 0 ? `E realizar um bolus de **${bolus} ml**.` : ''}`;
+      mensagemDiv.innerHTML = `Iniciar protocolo com vazão de ${vazao} ml/hr. ${bolus > 0 ? `E realizar um bolus de ${bolus} ml.` : ''}`;
     }
   });
 }
@@ -153,12 +153,12 @@ if (calcularReligarButton) {
 
     if (hgtAtualReligar < 70) {
       if (mensagemReligarDiv) {
-        mensagemReligarDiv.innerHTML = "<span style='color: red;'>**Atenção: HGT abaixo de 70 mg/dl. Pode ser  necessario adminstrar glicose ao paciente, avise o médico e ou enfermeiro.**</span>";
+        mensagemReligarDiv.innerHTML = "<span style='color: red;'>Atenção: HGT abaixo de 70 mg/dl. Pode ser  necessario adminstrar glicose ao paciente, avise o médico e ou enfermeiro.</span>";
       }
     } else if (hgtAtualReligar > 180) {
       const novaVazao = Math.floor((ultimaVazao * 0.75) * 2) / 2;
       if (mensagemReligarDiv) {
-        mensagemReligarDiv.innerHTML = `Religar protocolo com vazão de **${novaVazao} ml/hr**`;
+        mensagemReligarDiv.innerHTML = `Religar protocolo com vazão de ${novaVazao} ml/hr`;
       }
     } else {
       if (mensagemReligarDiv) {
@@ -197,9 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // --- Novas regras para HGT Atual < 140 ---
             if (hgtAtual < 70) {
-                mensagemAjuste = `<span style='color: red;'>**HGT Atual: ${hgtAtual} mg/dL.** É necessário **avisar o médico**. Pode ser necessário administrar glicose. Checar prescrição médica e comunicar o enfermeiro. **Desligar a insulina.**`;
+                mensagemAjuste = `<span style='color: red;'>HGT Atual: ${hgtAtual} mg/dL. É necessário **avisar o médico. Pode ser necessário administrar glicose. Checar prescrição médica e comunicar o enfermeiro. DESLIGAR A INSULINA!`;
             } else if (hgtAtual < 140) {
-                mensagemAjuste = `**HGT Atual: ${hgtAtual} mg/dL.** **Desligar a insulina.**`;
+                mensagemAjuste = `**HGT Atual: ${hgtAtual} mg/dL.DESLIGAR A INSULINA!`;
             } else if (hgtAtual >= 140 && hgtAtual <= 180) {
                 // Regras para HGT Atual entre 140 e 180 mg/dL
                 if (diferencaHgt >= -20 && diferencaHgt <= 0) {
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Diminuir a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Um Delta)`;
                         acaoDelta = 'Diminuir';
                     } else {
-                        mensagemAjuste = `Diminuir a Infusão em Um Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Diminuir a Infusão em Um Delta: ${valorDelta}.`;
                         acaoDelta = 'Diminuir';
                     }
                 } else if (diferencaHgt < -40) {
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Diminuir a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Dois Delta)`;
                         acaoDelta = 'Diminuir';
                     } else {
-                        mensagemAjuste = `Diminuir a Infusão em Dois Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Diminuir a Infusão em Dois Delta: ${valorDelta}.`;
                         acaoDelta = 'Diminuir';
                     }
                 } else { // Se aumentou nesta faixa (HGT Atual entre 140 e 180, e diferencaHgt > 0)
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Aumentar a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Dois Delta)`;
                         acaoDelta = 'Aumentar';
                     } else {
-                        mensagemAjuste = `Aumentar a Infusão em Dois Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Aumentar a Infusão em Dois Delta: ${valorDelta}.`;
                         acaoDelta = 'Aumentar';
                     }
                 } else if (diferencaHgt >= 1 && diferencaHgt <= 40) {
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Aumentar a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Um Delta)`;
                         acaoDelta = 'Aumentar';
                     } else {
-                        mensagemAjuste = `Aumentar a Infusão em Um Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Aumentar a Infusão em Um Delta: ${valorDelta}.`;
                         acaoDelta = 'Aumentar';
                     }
                 } else if (diferencaHgt >= -40 && diferencaHgt <= 0) {
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Diminuir a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Um Delta)`;
                         acaoDelta = 'Diminuir';
                     } else {
-                        mensagemAjuste = `Diminuir a Infusão em Um Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Diminuir a Infusão em Um Delta: ${valorDelta}.`;
                         acaoDelta = 'Diminuir';
                     }
                 } else if (diferencaHgt < -80) {
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Diminuir a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Dois Delta)`;
                         acaoDelta = 'Diminuir';
                     } else {
-                        mensagemAjuste = `Diminuir a Infusão em Dois Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Diminuir a Infusão em Dois Delta: ${valorDelta}.`;
                         acaoDelta = 'Diminuir';
                     }
                 }
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Aumentar a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Dois Delta)`;
                         acaoDelta = 'Aumentar';
                     } else {
-                        mensagemAjuste = `Aumentar a Infusão em Dois Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Aumentar a Infusão em Dois Delta: ${valorDelta}.`;
                         acaoDelta = 'Aumentar';
                     }
                 } else if (diferencaHgt >= 1 && diferencaHgt <= 40) {
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Aumentar a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Um Delta)`;
                         acaoDelta = 'Aumentar';
                     } else {
-                        mensagemAjuste = `Aumentar a Infusão em Um Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Aumentar a Infusão em Um Delta: ${valorDelta}.`;
                         acaoDelta = 'Aumentar';
                     }
                 } else if (diferencaHgt >= -80 && diferencaHgt <= 0) {
@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Diminuir a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Um Delta)`;
                         acaoDelta = 'Diminuir';
                     } else {
-                        mensagemAjuste = `Diminuir a Infusão em Um Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Diminuir a Infusão em Um Delta: ${valorDelta}.`;
                         acaoDelta = 'Diminuir';
                     }
                 } else if (diferencaHgt < -120) {
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mensagemAjuste = `Diminuir a Infusão em ${valorDelta.toFixed(1)} ml/hr. (Dois Delta)`;
                         acaoDelta = 'Diminuir';
                     } else {
-                        mensagemAjuste = `Diminuir a Infusão em Dois Delta: **${valorDelta}**.`;
+                        mensagemAjuste = `Diminuir a Infusão em Dois Delta: ${valorDelta}.`;
                         acaoDelta = 'Diminuir';
                     }
                 }
@@ -321,11 +321,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (hgtAtual < 140) { // Para os casos de "desligar" ou "avisar médico"
                 mensagemFinal = mensagemAjuste;
             } else if (mensagemAjuste.includes('Manter')) {
-                mensagemFinal = `Manter o valor atual de insulina (vazão ${vazaoAtual.toFixed(1)} ml/hr)**.`;
+                mensagemFinal = `Manter o valor atual de insulina (vazão ${vazaoAtual.toFixed(1)} ml/hr).`;
             } else if (typeof valorDelta === 'number') {
-                mensagemFinal = `Ajustar o valor de insulina para: **${valorAjustado.toFixed(1)} ml/hr** (${mensagemAjuste.replace(' ml/hr.', '').replace('Aumentar a Infusão em ', 'Aumentar ').replace('Diminuir a Infusão em ', 'Diminuir ')}).`;
+                mensagemFinal = `Ajustar o valor de insulina para: ${valorAjustado.toFixed(1)} ml/hr (${mensagemAjuste.replace(' ml/hr.', '').replace('Aumentar a Infusão em ', 'Aumentar ').replace('Diminuir a Infusão em ', 'Diminuir ')}).`;
             } else { // Caso o delta seja "avisar o médico"
-                mensagemFinal = `Ajustar o valor de insulina para: **${mensagemAjuste}**`;
+                mensagemFinal = `Ajustar o valor de insulina para: ${mensagemAjuste}`;
             }
 
             mensagemManutencaoDiv.innerHTML = mensagemFinal;
