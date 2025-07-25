@@ -1,0 +1,169 @@
+/* === GERAL === */
+* {
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 90%;
+}
+
+/* === TIPOS DE LETRA === */
+p, h1, h2, b, footer {
+  color: #3497d1; /* Azul padrão */
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 10px;
+  max-width: 90%;
+}
+
+p {
+  font-size: 18px;
+}
+
+b {
+  font-size: 40px;
+}
+#aviso-motivacional {
+  font-size: 48px;
+}
+
+#saudacao {
+  color: #3497d1; /* Azul padrão */
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 10px;
+  max-width: 90%;
+  font-size: 50px;
+}
+
+#data-hora {
+  color: #3497d1; /* Azul padrão */
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 10px;
+  max-width: 90%;
+  font-size: 30px;
+}
+
+/* === CAMPOS DE INSERÇÃO === */
+.campo-inserir {
+  width: 80%;
+  height: 80px;
+  padding: 10px;
+  font-size: 20px;
+  border: 2px solid #164caf; /* Azul escuro */
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  max-width: 90%;
+  width: 300px;
+  height: 50px;
+}
+
+/* === BOTÃO DE CALCULAR === */
+.calcularBotao {
+  width: 100%;
+  max-width: 150px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* === TABELAS === */
+#tabela-ajuste, #tabela-delta {
+  color: #3497d1; /* Azul padrão */
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 10px;
+  max-width: 90%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  border-collapse: collapse;
+}
+
+#tabela-ajuste th, #tabela-delta th, #tabela-ajuste td, #tabela-delta td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* === MENSAGENS === */
+#mensagem-manutencao, #mensagem, #mensagem-religar {
+  color: #3497d1; /* Azul padrão */
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 10px;
+  max-width: 90%;
+  font-size: 50px;
+  border: 1px solid #ddd;
+}
+
+#advertencia {
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding: 10px;
+  max-width: 90%;
+  font-size: 30px;
+  border: 3px solid #ddd;
+}
+
+/* === MENU === */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+nav a {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #3497d1; /* Azul padrão */
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+nav a:hover {
+  background-color: #164caf; /* Azul escuro */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p a {
+  color: #164caf;
+  text-decoration: none;
+}
+
+p a:hover {
+  color: #164caf;
+}

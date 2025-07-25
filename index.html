@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Insulina</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+  <body>
+    <nav>
+    <ul>
+            <li><a href="sobreProtocolo.html">Sobre o protocolo</a></li>
+            <li><a href="#manutencao">Manutenção</a></li>
+            <li><a href="inicioReligar.html">Início e religar</a></li>
+        </ul>
+    </nav>
+  
+    <p id="saudacao"></p>
+    <div id="data-hora"></div>
+
+    <p id="Calculadora">
+    <p>Consulte as informações em <a href="SobreProtocolo.html">"sobre o protocolo".</a> antes de utilizar a calculadora.</p>
+    <div>  
+    </h1>
+    <h1 id="manutencao">
+      <div id="data-hora"></div>
+    <b>Manutenção: </b>
+    <h1>Valor atual de HGT:</h1>
+    <br>
+  <input type="text" id="HgtAtual" name="HgtAtual" placeholder="Inserir o valor atual (mg/dl)">
+  <br>
+   <h1>Inserir HGT anterior:</h1>
+    <br>
+  <input type="text" id="HgtAnterior" name="HgtAnterior" placeholder="Inserir o valor anterior (mg/dl)">
+  <br>
+     <h1>Inserir a vazão atual:</h1>
+     <br>
+  <input type="number" id="VazaoAtual" step="0,5" min="0,5" max="50,0"name="VazaoAtual" placeholder="Inserir a vazão atual (ml/hr)">
+   <button id="DiferencaHgt"class="calcularBotao">Calcular</button>
+   </h1>
+  </div>     
+  <div class="container">
+  <div class="caixa-mensagem">
+    <h1><div id="mensagem-manutencao"></div></h1>
+  </div>
+  </body>
+  <footer>
+    <div id="Contato">
+    <p>Para sugestões, entre em contato:</p>
+    <p><a href="mailto"peterciprianow@gmail.com>peterciprianow@gmail.com</a></p>
+    <p>&copy; Peter Willian's Cipriano. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+ </html>
